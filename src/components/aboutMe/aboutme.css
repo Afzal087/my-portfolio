@@ -1,0 +1,55 @@
+.about-section {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #f8f8f2;
+}
+
+.about-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  background:linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  width: 300px;           /* Decreased from 350px to 300px */
+  max-width: 100%;        /* Prevents overflow */
+  height: auto;
+  border-radius: 20px;    /* Keeps the rounded corners */
+  object-fit: cover;      /* Keeps image neat */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Optional: adds soft shadow */
+}
+
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.about-text h2 {
+  margin-top: 30px;
+  font-size: 1.6rem;
+  background:linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    background-clip:text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

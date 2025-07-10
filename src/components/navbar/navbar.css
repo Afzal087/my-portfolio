@@ -1,0 +1,43 @@
+* {
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #161513;
+    background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    height: 100vh;
+    color: white;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 180px;
+}
+
+.navMenu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid grey;
+}
+
+.nav-Connect {
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: 1px solid greyl;
+    background: #020024;
+background:linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);    cursor: pointer;
+}

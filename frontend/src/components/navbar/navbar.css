@@ -1,0 +1,51 @@
+* {
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    height: 100vh;
+    color: black;
+}
+
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 180px;
+   
+}
+
+.navMenu {
+   
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+}
+
+.logo {
+    background:linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  
+}
+
+.nav-Connect {
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: 1px solid greyl;
+    color: white;
+background:linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);    cursor: pointer;
+}

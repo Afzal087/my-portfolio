@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Deloitte. Technology Job Simulation ",
+        "description": "I completed a job simulation involving development and coding and Wrote a proposal for creating a dashboard",
+        "imageURL": "/images/deloitte.png"
+    },
+    {
+        "name": "Generative AI Fundamentals with Google Cloud",
+        "description": "I explored how generative AI models like large language models (LLMs) and diffusionmodels work",
+        "imageURL": "/images/genai.png"
+    },
+    {
+        "name": "Fullstack Web Development BootCamp",
+        "description": "Build 16 web development projects.",
+        "imageURL": "/images/udemy.jpg"
+    }
+]

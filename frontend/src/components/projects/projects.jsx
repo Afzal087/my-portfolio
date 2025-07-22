@@ -1,34 +1,89 @@
-
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import projects from "../projects/products.json";
-import LinkIcon from '@mui/icons-material/Link';
+import LinkIcon from "@mui/icons-material/Link";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Projects() {
-    return (
+  const headingRef = useRef(null);
+  const projectRef = useRef([]);
 
-        <div id="projects" className=" flex flex-col gap-3 justify-start items-center py-8 h-screen bg-blue-50  w-screen">
-            <div className="w-3/4 h-1/4">
-                <h1 className="flex justify-end  font-semibold text-5xl  text-blue-600">Works</h1>
-                {projects.map(item => {
-                    return (
-                        <div className="flex flex-col w-full  justify-center gap-5 h-full my-10 bg-white-200 hover:bg-blue-300 px-20 p-4 text-blue-900 rounded-lg">
-                            <p className="text-lg font-semibold">{item.name}</p>
-                            <p>{item.description}</p>
-                            <button className="flex justify-start gap-1 text-red-600 items-center" >Link to Project<LinkIcon  fontSize="Small"/></button>
-                        </div>
-                    )
-                })}
+  useEffect(() => {
+    if (headingRef.current) {
+      gsap.fromTo(
+        headingRef.current,
+        { x: 1000, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.5,
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 80%",
+          },
+        }
+      );
+    }
+
+    if (projectRef.current) {
+      gsap.fromTo(
+        projectRef.current,
+        { x: -300, opacity: 0 },
+        {
+          x: 0,
+          delay: 1,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: projectRef.current[0],
+            start: "top 80%",
+          },
+        }
+      );
+    }
+  }, []);
+
+  return (
+    <div
+      id="projects"
+      className="flex flex-col items-center py-10 px-4 sm:px-8 md:px-16 lg:px-20 bg-blue-50 w-full"
+    >
+      <div className="w-full max-w-6xl">
+        <h1
+          ref={headingRef}
+          className="text-3xl sm:text-4xl md:text-5xl font-semibold text-right text-blue-600 mb-8"
+        >
+          Works
+        </h1>
+
+        <div className="flex flex-col gap-8">
+          {projects.map((item, index) => (
+            <div
+              key={index}
+              ref={(el) => (projectRef.current[index] = el)}
+              className="flex flex-col bg-white hover:bg-blue-200 transition-colors duration-300 rounded-xl shadow-md p-5"
+            >
+              <p className="text-xl font-semibold">{item.name}</p>
+              <p className="text-base text-gray-700">{item.description}</p>
+
+              <a href={item.gitURL}>
+                <button className="mt-3 flex items-center text-blue-700 hover:text-red-600 gap-1">
+                  Link to Project
+                  <LinkIcon fontSize="small" />
+                </button>
+              </a>
+
+
 
             </div>
-
-
-
-
-
-
-
+          ))}
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
 export default Projects;

@@ -42,7 +42,7 @@ function Contact() {
         {/* Left Side - Info */}
         <div className="flex-1 min-w-[280px]">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="bg-blue-300 bg-clip-text text-transparent">Let's</span> talk
+            <span className="bg-blue-600 font-medium bg-clip-text text-transparent">Let's</span> talk
           </h2>
           <p className="mb-4 text-lg text-blue-950">
             I'm currently open to new opportunities and collaborations. Whether you have a question,

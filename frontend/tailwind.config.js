@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily:{
         sans: ['Outfit'],
+         marker: ['"Permanent Marker"', 'cursive'],
       },
     },
   },

@@ -15,9 +15,9 @@ function App() {
    <Herosection />
    <AboutMe />
    <Projects />
-    
+  <Certif /> 
    <Contact />
-   {/* <Certif />  */}
+   
   </div>
   
   )

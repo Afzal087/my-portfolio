@@ -1,41 +1,73 @@
 import express from "express";
 import UserModel from "../models/UserModel.js";
 import cors from "cors";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+
+
+
+
 
 const app = express();
-const PORT = 5000; 
-
+const PORT = 5000;
+dotenv.config();
 app.use(cors());
 app.use(express.json());
 
 const router = express.Router();
 
-router.get("/contact",async (req,res)=>{
-    try{
-        const users = await UserModel.find();
-       res.status(200).json(users);
 
-    }catch(err){
-        res.status(500).json({success : false , message : err.message});
+
+router.get("/contact", async (req, res) => {
+    try {
+        const users = await UserModel.find();
+        res.status(200).json(users);
+
+    } catch (err) {
+        res.status(500).json({ success: false, message: err.message });
     }
 
 });
 
-router.post("/contact" ,async (req,res)=>{
+router.post("/contact", async (req, res) => {
+    const { name, email, message } = req.body;
     try {
-        const {name , email , message} = req.body;
+
+
         const newUser = new UserModel({ name, email, message });
         await newUser.save();
         res.status(200).json({ success: true, user: newUser });
-
-    }catch(err){
-        res.status(500).json({success : false , message : err.message});
+    } catch (err) {
+        res.status(500).json({ success: false, message: err.message });
     }
-  
-}); 
+
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: process.env.EMAIL,
+            pass: process.env.GPASS
+        }
+
+    })
+
+    const mailoptions = {
+        from: process.env.EMAIL,
+        to: "mdafzal87r@gmail.com",
+        subject: `Portfolio Response from ${name} `,
+        text: `${message}`
+    };
+    
+    transporter.sendMail(mailoptions, (error, info) => {
+        if (error) { console.error("Email error ", error);}
+        else {console.log("Email Sent Successfully", info.response);}
+    })
+
+
+
+});
 
 app.use("/", router);
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`Server running on Port ${PORT}`);
 })
 

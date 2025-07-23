@@ -21,7 +21,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://my-portfolio-4l1f.onrender.com", formData);
+      await axios.post("https://my-portfolio-4l1f.onrender.com/contact", formData);
       alert("Message sent successfully!");
 
       setFormData({

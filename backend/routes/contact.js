@@ -9,9 +9,10 @@ import dotenv from "dotenv";
 
 
 const app = express();
-const PORT = 5000;
+
 dotenv.config();
 app.use(cors());
+const PORT = "https://my-portfolio-4l1f.onrender.com";
 app.use(express.json());
 
 const router = express.Router();

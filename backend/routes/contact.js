@@ -12,7 +12,7 @@ const app = express();
 
 dotenv.config();
 app.use(cors());
-const PORT = "https://my-portfolio-4l1f.onrender.com";
+const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 const router = express.Router();

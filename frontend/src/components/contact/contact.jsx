@@ -3,6 +3,7 @@ import axios from "axios";
 import user from "./user.json";
 
 function Contact() {
+  const url = "https://my-portfolio-4l1f.onrender.com";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,7 +22,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/contact", formData);
+      await axios.post("https://my-portfolio-4l1f.onrender.com", formData);
       alert("Message sent successfully!");
 
       setFormData({

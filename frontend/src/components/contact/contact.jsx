@@ -3,7 +3,6 @@ import axios from "axios";
 import user from "./user.json";
 
 function Contact() {
-  const url = "https://my-portfolio-4l1f.onrender.com";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
